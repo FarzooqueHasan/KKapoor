@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiara Kapoor • Scrapbook Portfolio — DPS RK Puram (Vol. 17)</title>
+  <meta name="description" content="Personal scrapbook portfolio for Kiara Kapoor (kia / kfckapoor) — 11th Grader at DPS RK Puram. Web Developer, Graphic Designer, RWDC National 1st, NSS International 2nd, Senior Member AEROSS, Member CyberX.">
+  <meta name="author" content="Kiara Kapoor">
+  
+  <meta property="og:title" content="Kiara Kapoor • Scrapbook Portfolio">
+  <meta property="og:description" content="Web Developer & Graphic Designer at DPS RK Puram. RWDC National 1st, NSS International 2nd, AEROSS, CyberX.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon: Coffee Cup SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+
+  <!-- Google Fonts: Caveat (Handwriting), Special Elite (Typewriter), Reenie Beanie (Marginalia), Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Reenie+Beanie&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Confetti Canvas for Birthday Physics Animation -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="journal-canvas">
+    
+    <!-- Grand Centerpiece: The Spiral Notebook Sheet -->
+    <div class="main-scrapbook-sheet">
+      
+      <!-- Spiral Binder Torn Ring Holes at Top -->
+      <div class="spiral-binder-edge" aria-hidden="true">
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+        <div class="spiral-hole"></div>
+      </div>
+
+      <!-- Real Vintage Pencil on Left Margin -->
+      <div class="real-pencil" aria-hidden="true">
+        <div class="pencil-eraser"></div>
+        <div class="pencil-ferrule"></div>
+        <div class="pencil-tip"></div>
+        <div class="pencil-lead"></div>
+      </div>
+
+      <!-- Header & Navigation Bar -->
+      <header class="scrapbook-header-nav">
+        <a href="#hero" class="scrapbook-brand">
+          <span class="brand-main">kiara's scrapbook</span>
+          <span class="brand-vol">vol. 17 • dps rk puram</span>
+        </a>
+
+        <nav aria-label="Scrapbook Spreads">
+          <ul class="nav-links-row">
+            <li><a href="#about" class="nav-link-item">About</a></li>
+            <li><a href="#accolades" class="nav-link-item">Accolades</a></li>
+            <li><a href="#crafts" class="nav-link-item">Crafts</a></li>
+            <li><a href="#projects" class="nav-link-item">Works</a></li>
+            <li><a href="#snapshots" class="nav-link-item">Snapshots</a></li>
+            <li><a href="#guestbook" class="nav-link-item">Birthday Wall</a></li>
+            <li><a href="#contact" class="nav-link-item">Say Hi</a></li>
+          </ul>
+        </nav>
+
+        <button type="button" class="bday-stamp-badge trigger-bday" aria-label="Celebrate Kiara's 17th Birthday">
+          <span>🎂</span> it's my birthday!
+        </button>
+      </header>
+
+      <!-- ====================================================================
+           SPREAD 1: "The Desk & The 17th Birthday" (Identity Collage)
+           ==================================================================== -->
+      <section id="about" class="hero-collage" aria-label="About Kiara">
+        
+        <!-- Left: Polaroid of Kiara -->
+        <div style="position: relative;">
+          <div class="pressed-leaf" aria-hidden="true">🍂</div>
+          <figure class="polaroid-card" style="--rot: -2.8deg;">
+            <div class="washi-tape washi-blue tape-top-left" style="--rot: -35deg;" aria-hidden="true"></div>
+            <div class="washi-tape washi-masking tape-top-right" style="--rot: 28deg;" aria-hidden="true"></div>
+            <div class="paperclip-metal" aria-hidden="true"></div>
+
+            <div class="polaroid-image-frame">
+              <img src="assets/images/kiara-portrait.jpg" alt="Polaroid photo of Kiara Kapoor studying and coding at desk" width="600" height="600">
+            </div>
+
+            <figcaption class="polaroid-hand-caption">
+              kia • coffee in hand, debugging css at 2am
+            </figcaption>
+            <div class="polaroid-subtag">DPS RK PURAM • OCT '26</div>
+          </figure>
+
+          <!-- Casual marginalia note below photo -->
+          <div style="font-family: var(--font-casual); font-size: 24px; color: var(--ink-blue-pen); transform: rotate(-3deg); margin-top: 14px; text-align: center;">
+            ~ coffee fuel: 100% hazelnut roast ☕
+          </div>
+        </div>
+
+        <!-- Right: Kraft Scrap & Lined Notepad Checklist -->
+        <div style="position: relative;">
+          
+          <!-- Kraft Paper Headline Scrap -->
+          <div class="kraft-scrap-banner" style="--rot: 1.2deg;">
+            <div class="washi-tape washi-masking tape-top-center" style="--rot: -1deg;" aria-hidden="true"></div>
+            <div class="smiley-sticker" aria-hidden="true">🙂</div>
+
+            <h1 class="kraft-headline">
+              collect moments,<br>not just divs.
+            </h1>
+            <p class="kraft-body">
+              Hi, I'm <strong>Kiara Kapoor</strong>. 11th grade high school student at <strong>DPS R.K. Puram</strong>, New Delhi. Navigating school physics & chemistry by day, engineering tactile web experiences, aerodynamic CAD systems & editorial graphics by night.
+            </p>
+          </div>
+
+          <!-- School Ruled Notepad Checklist -->
+          <div class="ruled-notepad" style="--rot: -1.5deg;">
+            <div class="wooden-pushpin" aria-hidden="true"></div>
+            
+            <div class="ruled-notepad-header">
+              <span>TODAY AT DPS RK PURAM // OCT '26</span>
+              <span>11TH GRADE</span>
+            </div>
+
+            <ul class="checklist-items">
+              <li class="checklist-item">
+                <span class="check-box-checked">☑</span> Focus: Web Development & Graphic Designing
+              </li>
+              <li class="checklist-item">
+                <span class="check-box-checked">☑</span> Senior Member @ AEROSS (Aerospace Society) 🚀
+              </li>
+              <li class="checklist-item">
+                <span class="check-box-checked">☑</span> Member @ CyberX (Computer Science Club) 💻
+              </li>
+              <li class="checklist-item">
+                <span class="check-box-checked">☑</span> RWDC National First 🏆 & NSS International 2nd 🛰️
+              </li>
+              <li class="checklist-item">
+                <span class="check-box-checked">☑</span> Nicknames: <code>kia</code> / <code>kfckapoor</code> 🍗
+              </li>
+              <li class="checklist-item" style="color: #A83628; font-weight: 700;">
+                <span class="check-box-checked" style="color: #A83628;">☑</span> Status: turning 17 today! 🎂🎉
+              </li>
+            </ul>
+          </div>
+
+          <div class="doodle-butterfly" aria-hidden="true">🦋</div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 2: "The Blueprints & Trophies" (Accolades & Leadership)
+           ==================================================================== -->
+      <section id="accolades" class="spread-section" aria-label="Accolades and Societies">
+        <div class="section-hand-header">
+          <span class="section-tag-stamp">PAGE 02 • THE TROPHY WALL</span>
+          <h2 class="section-hand-title">national championships & aerospace societies</h2>
+        </div>
+
+        <div class="trophies-collage-grid">
+          
+          <!-- RWDC National First -->
+          <article class="scrap-trophy-card" style="--rot: -1.4deg; background-color: #FFFDF8;">
+            <div class="washi-tape washi-caramel tape-top-left" style="--rot: -26deg;" aria-hidden="true"></div>
+            <div class="trophy-badge-row">
+              <span class="trophy-seal">🏆</span>
+              <span class="trophy-org-tag" style="color: #B27B1E; font-weight: 700;">ALL-INDIA 1ST • TEAM FRIGIDUS IGNIS</span>
+            </div>
+            <h3 class="trophy-card-title">RWDC National First</h3>
+            <p class="trophy-card-desc">
+              <strong>Real World Design Challenge (RWDC)</strong> — Part of team <em>Frigidus Ignis</em> (AEROSS, DPS R.K. Puram). Led CAD airfoil modeling, aerodynamic efficiency simulations & technical deck for an unmanned aircraft system organized by Embry-Riddle Aeronautical University. Awarded <strong>1st Place Nationally</strong>, selected to represent India at the International Finals in Washington, D.C.
+            </p>
+          </article>
+
+          <!-- NSS International Second -->
+          <article class="scrap-trophy-card" style="--rot: 1.8deg; background-color: #F8FAFC;">
+            <div class="washi-tape washi-blue tape-top-right" style="--rot: 28deg;" aria-hidden="true"></div>
+            <div class="trophy-badge-row">
+              <span class="trophy-seal">🚀</span>
+              <span class="trophy-org-tag" style="color: #2F6494; font-weight: 700;">GLOBAL RECOGNITION</span>
+            </div>
+            <h3 class="trophy-card-title">NSS International Second</h3>
+            <p class="trophy-card-desc">
+              <strong>National Space Society (NSS)</strong> — Awarded <strong>2nd Prize Globally</strong> in the Gerard K. O'Neill Space Settlement Contest for architecting an orbital space habitat, artificial gravity centrifugal specs, and complete mission branding.
+            </p>
+          </article>
+
+          <!-- Senior Member AEROSS -->
+          <article class="scrap-trophy-card blueprint-scrap" style="--rot: 1deg;">
+            <div class="wooden-pushpin" aria-hidden="true"></div>
+            <div class="trophy-badge-row">
+              <span class="trophy-seal">🛰️</span>
+              <span class="trophy-org-tag" style="color: #B54728; font-weight: 700;">DPS RK PURAM AEROSPACE</span>
+            </div>
+            <h3 class="trophy-card-title">Senior Member — AEROSS</h3>
+            <p class="trophy-card-desc">
+              Active <strong>Senior Member at AEROSS</strong> (Aeronautical Society of DPS RK Puram). Leading visual engineering design, CAD renders, technical documentation, and mentoring junior high school delegates.
+            </p>
+          </article>
+
+          <!-- Member CyberX -->
+          <article class="scrap-trophy-card cyberx-scrap" style="--rot: -1.8deg;">
+            <div class="paperclip-metal" aria-hidden="true"></div>
+            <div class="trophy-badge-row">
+              <span class="trophy-seal">💻</span>
+              <span class="trophy-org-tag" style="color: #1F5F94; font-weight: 700;">DPS RK PURAM CS CLUB</span>
+            </div>
+            <h3 class="trophy-card-title">Member of CyberX</h3>
+            <p class="trophy-card-desc">
+              Core member of <strong>CyberX</strong> (DPS RKP's premier tech and computer science club). Building front-end applications, designing symposium web experiences, and competing in inter-school hackathons.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 3: "Craft & Code" (Web Dev & Graphic Design)
+           ==================================================================== -->
+      <section id="crafts" class="spread-section" aria-label="Craft and Skills">
+        <div class="section-hand-header">
+          <span class="section-tag-stamp">PAGE 03 • THE DUAL CRAFTS</span>
+          <h2 class="section-hand-title">code in the editor, craft on the canvas</h2>
+        </div>
+
+        <div class="craft-collage-row">
+          
+          <!-- Terracotta Scrap: Web Development -->
+          <div class="terracotta-scrap" style="--rot: -1.2deg;">
+            <div class="washi-tape washi-masking tape-top-left" style="--rot: -24deg;" aria-hidden="true"></div>
+            <h3 class="terracotta-title">&lt;Web Development /&gt;</h3>
+            <p class="terracotta-body">
+              Clean semantic markup, tactile CSS design systems, responsive flex/grid layouts, micro-animations, and fast Vercel deployments.
+            </p>
+            <div class="tag-cloud-scrap">
+              <span class="craft-tag-pill">HTML5 Semantic</span>
+              <span class="craft-tag-pill">Modern Vanilla CSS</span>
+              <span class="craft-tag-pill">JavaScript (ES6+)</span>
+              <span class="craft-tag-pill">React.js & Next.js</span>
+              <span class="craft-tag-pill">Responsive Design</span>
+              <span class="craft-tag-pill">Git & GitHub</span>
+              <span class="craft-tag-pill">Vercel Deployments</span>
+            </div>
+          </div>
+
+          <!-- Sage Green Scrap: Graphic Designing -->
+          <div class="sage-scrap" style="--rot: 1.6deg;">
+            <div class="washi-tape washi-blue tape-top-right" style="--rot: 26deg;" aria-hidden="true"></div>
+            <h3 class="sage-title">Graphic Designing 🎨</h3>
+            <p style="font-family: var(--font-typewriter); font-size: 13px; color: #273822; line-height: 1.6; margin-bottom: 16px;">
+              Brand identity systems, vector illustrations in Illustrator, Figma UI prototypes, and engineering presentation decks for RWDC/NSS.
+            </p>
+            <div class="tag-cloud-scrap">
+              <span class="craft-tag-pill" style="background: rgba(255,255,255,0.75); color: #273822;">Figma UI/UX</span>
+              <span class="craft-tag-pill" style="background: rgba(255,255,255,0.75); color: #273822;">Adobe Illustrator</span>
+              <span class="craft-tag-pill" style="background: rgba(255,255,255,0.75); color: #273822;">Photoshop</span>
+              <span class="craft-tag-pill" style="background: rgba(255,255,255,0.75); color: #273822;">Typography Pairing</span>
+              <span class="craft-tag-pill" style="background: rgba(255,255,255,0.75); color: #273822;">Brand Decks</span>
+            </div>
+
+            <!-- Soft Palette Swatches -->
+            <div class="palette-swatches-strip">
+              <div class="swatch-box" style="background: #2D2017;">#2D2017</div>
+              <div class="swatch-box" style="background: #D7BC98; color: #000;">#D7BC98</div>
+              <div class="swatch-box" style="background: #6E93B2;">#6E93B2</div>
+              <div class="swatch-box" style="background: #D28E7D;">#D28E7D</div>
+              <div class="swatch-box" style="background: #A2B596; color: #000;">#A2B596</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 4: "Selected Works / Blueprints"
+           ==================================================================== -->
+      <section id="projects" class="spread-section" aria-label="Selected Works">
+        <div class="section-hand-header">
+          <span class="section-tag-stamp">PAGE 04 • THE ARCHIVE FILES</span>
+          <h2 class="section-hand-title">selected projects & engineering decks</h2>
+        </div>
+
+        <div class="trophies-collage-grid">
+          
+          <!-- Project 1: CyberX CTF Platform (Real Repo) -->
+          <article class="scrap-trophy-card" style="--rot: -1deg;">
+            <div class="washi-tape washi-blue tape-top-left" style="--rot: -20deg;" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #3A72A4; margin-bottom: 6px;">DPS RK PURAM • CYBERX CS CLUB</div>
+            <h3 class="trophy-card-title">cyberxctf — Challenge Platform</h3>
+            <p class="trophy-card-desc">
+              Web platform engineered for CyberX's flagship Capture The Flag cybersecurity competition. Built with Node.js/Express, server routing, and modular CSS architecture for high school hackers.
+            </p>
+            <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: var(--font-typewriter); font-size: 11px; color: var(--ink-muted);">Node • HTML • CyberX</span>
+              <a href="https://github.com/KapoorKiara/cyberxctf" target="_blank" rel="noopener" style="font-family: var(--font-typewriter); font-size: 11px; color: #2A4870; text-decoration: underline;">
+                github.com/KapoorKiara/cyberxctf ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: Aether Platform (Real Repo + Vercel Deployment) -->
+          <article class="scrap-trophy-card" style="--rot: 1.5deg;">
+            <div class="washi-tape washi-caramel tape-top-right" style="--rot: 22deg;" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #B27B1E; margin-bottom: 6px;">EXUN CLAN '26 • LIVE ON VERCEL ▲</div>
+            <h3 class="trophy-card-title">Aether — Tech & Innovation</h3>
+            <p class="trophy-card-desc">
+              Multi-page web application featuring tech news feed, contact systems, and responsive modern interface built with custom typography and clean CSS layout systems.
+            </p>
+            <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+              <a href="https://task2n3-exun26.vercel.app" target="_blank" rel="noopener" style="font-family: var(--font-typewriter); font-size: 11px; color: #8A3E20; text-decoration: underline; font-weight: 700;">
+                task2n3-exun26.vercel.app ↗
+              </a>
+              <a href="https://github.com/KapoorKiara/task2n3-exun26" target="_blank" rel="noopener" style="font-family: var(--font-typewriter); font-size: 11px; color: #2A4870; text-decoration: underline;">
+                github.com/KapoorKiara/task2n3-exun26 ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Exun '26 Symposium Mockups (Real Repo) -->
+          <article class="scrap-trophy-card" style="--rot: -1.4deg;">
+            <div class="washi-tape washi-masking tape-top-left" style="--rot: -22deg;" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #2F6494; margin-bottom: 6px;">DPS RK PURAM • EXUN '26 LAB</div>
+            <h3 class="trophy-card-title">mockup2 & 3 — Exun '26</h3>
+            <p class="trophy-card-desc">
+              Frontend UI prototypes and responsive CSS layouts crafted for Exun Clan '26, the premier international technology symposium hosted by Delhi Public School, R.K. Puram.
+            </p>
+            <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: var(--font-typewriter); font-size: 11px; color: var(--ink-muted);">CSS Grid • UI Systems</span>
+              <a href="https://github.com/KapoorKiara/mockup2-exun26" target="_blank" rel="noopener" style="font-family: var(--font-typewriter); font-size: 11px; color: #2A4870; text-decoration: underline;">
+                github.com/KapoorKiara/mockup2-exun26 ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: Orient-26 High School Portal (Real Repo) -->
+          <article class="scrap-trophy-card" style="--rot: 1.2deg;">
+            <div class="paperclip-metal" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #4A7A3A; margin-bottom: 6px;">DPS RK PURAM • ORIENTATION PORTAL</div>
+            <h3 class="trophy-card-title">orient-26 — Orientation Web</h3>
+            <p class="trophy-card-desc">
+              Interactive high school portal for batch orientation at DPS R.K. Puram. Clean semantic structure and responsive layouts designed for onboarding high schoolers.
+            </p>
+            <div style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: var(--font-typewriter); font-size: 11px; color: var(--ink-muted);">HTML5 • DPS RKP '26</span>
+              <a href="https://github.com/KapoorKiara/orient-26" target="_blank" rel="noopener" style="font-family: var(--font-typewriter); font-size: 11px; color: #2A4870; text-decoration: underline;">
+                github.com/KapoorKiara/orient-26 ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: RWDC Aircraft Optimization Deck (Frigidus Ignis) -->
+          <article class="scrap-trophy-card" style="--rot: -1.2deg;">
+            <div class="washi-tape washi-caramel tape-top-center" style="--rot: 2deg;" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #B57F1E; margin-bottom: 6px;">RWDC ALL-INDIA 1ST • TEAM FRIGIDUS IGNIS</div>
+            <h3 class="trophy-card-title">RWDC Aircraft Presentation Deck</h3>
+            <p class="trophy-card-desc">
+              Complete visual communication and technical graphics system for UAS optimization. Designed CFD velocity charts, airfoil cross-sections, and national award-winning slides for Embry-Riddle.
+            </p>
+            <div style="margin-top: 14px; font-family: var(--font-typewriter); font-size: 11.5px; color: var(--ink-muted);">
+              Tools: Illustrator, CAD Visuals, InDesign • Washington D.C. Finalist
+            </div>
+          </article>
+
+          <!-- Project 6: AEROSS Orbital Habitat Portal -->
+          <article class="scrap-trophy-card" style="--rot: 1.8deg;">
+            <div class="wooden-pushpin" aria-hidden="true"></div>
+            <div class="trophy-org-tag" style="color: #6E93B2; margin-bottom: 6px;">NSS GLOBAL 2ND ARCHIVE</div>
+            <h3 class="trophy-card-title">AEROSS Space Habitat Portal</h3>
+            <p class="trophy-card-desc">
+              Interactive mission telemetry site and orbital habitat visualizer for the Gerard K. O'Neill Contest. Included 3D station renders, artificial gravity specs & mission branding.
+            </p>
+            <div style="margin-top: 14px; font-family: var(--font-typewriter); font-size: 11.5px; color: var(--ink-muted);">
+              Tech: HTML5, CSS3, WebGL, Figma • NSS Global 2nd
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 5: "The 3 Snapshots" (Polaroid Memories)
+           ==================================================================== -->
+      <section id="snapshots" class="spread-section" aria-label="Photo Snapshots">
+        <div class="section-hand-header">
+          <span class="section-tag-stamp">PAGE 05 • SNAPSHOT ROLL</span>
+          <h2 class="section-hand-title">three memories from life & the desk</h2>
+        </div>
+
+        <div class="polaroids-trio-row">
+          
+          <!-- Polaroid 1 -->
+          <figure class="polaroid-card" style="--rot: -2.5deg;">
+            <div class="washi-tape washi-blue tape-top-left" style="--rot: -30deg;" aria-hidden="true"></div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/kiara-portrait.jpg" alt="Kiara Kapoor coding at desk" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="polaroid-hand-caption">
+              kia @ desk, building cool stuff
+            </figcaption>
+            <div class="polaroid-subtag">DPS RK PURAM • '26</div>
+          </figure>
+
+          <!-- Polaroid 2 -->
+          <figure class="polaroid-card" style="--rot: 2deg;">
+            <div class="washi-tape washi-caramel tape-top-right" style="--rot: 25deg;" aria-hidden="true"></div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/aeross-lab.jpg" alt="AEROSS space colony blueprints and sketches" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="polaroid-hand-caption">
+              aeross space settlement grind
+            </figcaption>
+            <div class="polaroid-subtag">RWDC & NSS ARCHIVE</div>
+          </figure>
+
+          <!-- Polaroid 3 -->
+          <figure class="polaroid-card" style="--rot: -1.8deg;">
+            <div class="paperclip-metal" aria-hidden="true"></div>
+            <div class="polaroid-image-frame">
+              <img src="assets/images/design-workspace.jpg" alt="Design sketchbook with iPad and coffee" width="600" height="600" loading="lazy">
+            </div>
+            <figcaption class="polaroid-hand-caption">
+              figma vectors + espresso fuel
+            </figcaption>
+            <div class="polaroid-subtag">DESIGN STUDIO</div>
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 6: "Birthday Guestbook Wall" (Interactive Sticky Notes)
+           ==================================================================== -->
+      <section id="guestbook" class="spread-section" aria-label="Birthday Wall Guestbook">
+        <div class="section-hand-header">
+          <span class="section-tag-stamp">PAGE 06 • BIRTHDAY GUESTBOOK</span>
+          <h2 class="section-hand-title">leave a note for kia / kfckapoor 🎂</h2>
+        </div>
+
+        <div class="guestbook-cork-board">
+          
+          <!-- Sticky Note Creator Form -->
+          <div class="guestbook-input-card">
+            <div class="washi-tape washi-masking tape-top-center" style="--rot: 1deg;" aria-hidden="true"></div>
+            <h3 class="guestbook-input-title">✍️ Pin a Birthday Wish to Kia's Board</h3>
+
+            <form id="guestbook-form">
+              <input type="hidden" id="selected-note-color" value="var(--paper-yellow)">
+
+              <input type="text" id="note-author" class="guestbook-text-input" placeholder="Your Name or Club (e.g. CyberX Gang, Class 11-C, AEROSS)" required>
+
+              <textarea id="note-message" class="guestbook-text-input" style="min-height: 75px; resize: vertical;" placeholder="Write a note or wish to Kia / kfckapoor..." required></textarea>
+
+              <div class="color-dots-row">
+                <div style="font-family: var(--font-typewriter); font-size: 11.5px; color: var(--ink-muted);">
+                  Sticky Paper:
+                </div>
+                <div style="display: flex; gap: 8px;">
+                  <button type="button" class="color-circle-btn active" style="background: var(--paper-yellow);" data-color="var(--paper-yellow)" aria-label="Yellow Sticky"></button>
+                  <button type="button" class="color-circle-btn" style="background: var(--paper-kraft);" data-color="var(--paper-kraft)" aria-label="Kraft Sticky"></button>
+                  <button type="button" class="color-circle-btn" style="background: var(--paper-sage);" data-color="var(--paper-sage)" aria-label="Sage Sticky"></button>
+                  <button type="button" class="color-circle-btn" style="background: var(--paper-pink);" data-color="var(--paper-pink)" aria-label="Pink Sticky"></button>
+                  <button type="button" class="color-circle-btn" style="background: #E8EEF5;" data-color="#E8EEF5" aria-label="Blue Sticky"></button>
+                </div>
+
+                <button type="submit" class="btn-pin-stickynote">
+                  📌 Pin to Board
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Pinned Sticky Notes Grid -->
+          <div id="sticky-wall-grid" class="sticky-board-grid">
+            <!-- Populated via JavaScript and persisted to localStorage -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SPREAD 7: "Colophon & Dispatch" (Contact)
+           ==================================================================== -->
+      <section id="contact" class="dispatch-airmail-scrap" aria-label="Contact and Dispatch">
+        <div class="airmail-stripe-border" aria-hidden="true"></div>
+        <div class="washi-tape washi-caramel tape-top-center" style="--rot: -1deg;" aria-hidden="true"></div>
+
+        <div style="font-family: var(--font-typewriter); font-size: 11px; letter-spacing: 0.16em; color: var(--ink-muted); margin-bottom: 8px;">
+          AIRMAIL DISPATCH // NEW DELHI
+        </div>
+        
+        <h2 style="font-family: var(--font-handwriting); font-size: 44px; color: var(--ink-primary); margin: 0 0 10px 0;">
+          let's build something iconic together
+        </h2>
+        
+        <p style="font-family: var(--font-typewriter); font-size: 13.5px; color: var(--ink-body); max-width: 580px; margin: 0 auto;">
+          Whether it's an ambitious web experience, aerospace CAD graphics, or talking coffee beans in Delhi — my inbox is always open.
+        </p>
+
+        <div class="social-paper-links">
+          <a href="mailto:kiarakapoor.dev@gmail.com" class="social-stamp-pill">
+            <span>✉️</span> kiarakapoor.dev@gmail.com
+          </a>
+          <a href="https://github.com/KapoorKiara" target="_blank" rel="noopener" class="social-stamp-pill">
+            <span>🐙</span> GitHub / KapoorKiara
+          </a>
+          <a href="https://www.linkedin.com/in/kiara-kapoor-a1ab43394/" target="_blank" rel="noopener" class="social-stamp-pill">
+            <span>💼</span> LinkedIn / kiara-kapoor
+          </a>
+        </div>
+
+        <div style="font-family: var(--font-handwriting); font-size: 26px; color: #8A4E2A; margin-top: 14px;">
+          "stay caffeinated, keep building, reach for the stars." — kia (kfckapoor)
+        </div>
+
+        <footer class="scrapbook-footer-colophon">
+          <p style="margin: 0 0 6px 0;">
+            Kiara Kapoor • 11th Grade, DPS RK Puram • Senior Member AEROSS • Member CyberX • RWDC 1st • NSS 2nd
+          </p>
+          <p style="margin: 0; opacity: 0.75; font-size: 10.5px;">
+            Deployed on Vercel ▲ • Happy 17th Birthday Kia! 🎂 • Scrapbook &copy; 2026
+          </p>
+        </footer>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Birthday Toast Modal Dialog -->
+  <div id="bday-modal" class="bday-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="bday-dialog-title">
+    <div class="bday-toast-sheet">
+      <div class="washi-tape washi-caramel tape-top-center" style="--rot: 1deg;" aria-hidden="true"></div>
+      <div style="font-size: 48px; margin-bottom: 6px;">🎂✨</div>
+      <h3 id="bday-dialog-title" class="bday-toast-title">Happy 17th Birthday, Kia!</h3>
+      <p class="bday-toast-text">
+        To <strong>Kiara Kapoor</strong> (aka <strong>kfckapoor</strong>) — DPS RK Puram's star web developer and graphic designer, RWDC National Champion, and NSS space settlement pioneer!<br><br>
+        May your 17th year be full of zero merge conflicts, double-shot espresso, award-winning artboards, and infinite inspiration. Keep shining bright! 🚀☕
+      </p>
+      <button type="button" id="bday-modal-close" class="btn-bday-close">
+        🎉 Cheers! Keep Exploring
+      </button>
+    </div>
+  </div>
+
+  <script src="js/scrapbook.js"></script>
+</body>
+</html>

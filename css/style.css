@@ -1,0 +1,1115 @@
+/* ==========================================================================
+   Kiara Kapoor's Authentic Scrapbook Portfolio — Light Tactile Edition
+   Inspired by real life journals, torn paper collage, pressed leaves & tape
+   DPS RK Puram • 11th Grade • Web Dev & Graphic Design • Birthday Edition
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design Tokens & CSS Variables (Light, Warm, Tactile Paper)
+   -------------------------------------------------------------------------- */
+:root {
+  /* User-Specified Palette */
+  --color-primary: #b5946e;        /* Primary warm golden-tan craft tone */
+  --bg-desk: #d9bc97;              /* Background warm kraft desk tone */
+  --bg-desk-warm: #cfb18b;
+  --sticky-bg-default: #e2cfb3;    /* Sticky notes background */
+  --color-heading: #241711;        /* Heading deep fountain ink color */
+  --color-heading-bg: #d9bc97;     /* Heading stamp background (#d9bc97) */
+
+  /* Paper Sheets & Surfaces */
+  --paper-white: #FCFAF6;          /* Crisp spiral notebook paper */
+  --paper-kraft: #b5946e;          /* Primary kraft paper scrap (#b5946e) */
+  --paper-kraft-dark: #9c7c58;     /* Deep craft cardboard */
+  --paper-cream: #e2cfb3;          /* Warm vintage parchment / sticky bg (#e2cfb3) */
+  --paper-lined: #FDFCF7;          /* School ruled lined paper */
+  --paper-peach: #E8B4A2;          /* Soft terracotta/peach scrap */
+  --paper-sage: #C5CEBC;           /* Pressed botanical matcha sage scrap */
+  --paper-yellow: #e2cfb3;         /* User default sticky notes bg (#e2cfb3) */
+  --paper-pink: #E8BCBA;           /* Dusty rose birthday note */
+  --paper-polaroid: #FFFFFF;       /* Crisp Polaroid frame */
+
+  /* Inks (Dark espresso fountain ink for crisp readable headings) */
+  --ink-primary: #241711;          /* Dark espresso ink for headings */
+  --ink-body: #362820;             /* Soft charcoal/brown typewriter body */
+  --ink-muted: #6B5546;            /* Soft pencil graphite note */
+  --ink-faint: #967C6A;            /* Faint margin date stamps */
+  --ink-blue-pen: #2A4870;         /* Blue ballpoint pen doodle */
+  --ink-red-pen: #A83628;          /* Red marking pen */
+
+  /* Authentic Washi & Masking Tapes */
+  --tape-blue: rgba(110, 147, 178, 0.85);    /* Vintage blue washi tape */
+  --tape-caramel: rgba(181, 148, 110, 0.92); /* Matches primary #b5946e */
+  --tape-masking: rgba(226, 207, 179, 0.90); /* Matches sticky bg #e2cfb3 */
+  --tape-terracotta: rgba(200, 115, 90, 0.85);
+
+  /* Accents */
+  --accent-gold: #D4A034;          /* RWDC National 1st Gold */
+  --accent-silver: #8A9BA8;        /* NSS International 2nd */
+  --accent-cyber: #3A72A4;         /* CyberX blue */
+  --accent-aeross: #C95A3B;        /* AEROSS red/orange */
+
+  /* Shadows (Natural, soft, tactile lifts) */
+  --shadow-paper: 0 16px 40px rgba(60, 42, 28, 0.14), 0 3px 8px rgba(60, 42, 28, 0.08);
+  --shadow-polaroid: 0 14px 34px rgba(50, 35, 24, 0.20), 0 2px 6px rgba(50, 35, 24, 0.1);
+  --shadow-tape: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --shadow-pin: 0 3px 6px rgba(50, 35, 24, 0.35);
+
+  /* Fonts */
+  --font-handwriting: 'Caveat', cursive, sans-serif;
+  --font-typewriter: 'Special Elite', monospace;
+  --font-casual: 'Reenie Beanie', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Page Setup
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-desk);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-desk);
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(181, 148, 110, 0.3) 0%, transparent 45%),
+    linear-gradient(180deg, #d9bc97 0%, #d2b38c 50%, #c9a980 100%);
+  color: var(--ink-body);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Authentic Paper Grain & Noise Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* --------------------------------------------------------------------------
+   Scrapbook Container: The Grand Journal Desk
+   -------------------------------------------------------------------------- */
+.journal-canvas {
+  max-width: 1140px;
+  margin: 30px auto 80px auto;
+  position: relative;
+  padding: 0 16px;
+}
+
+/* Main Spiral Notebook Sheet (The Centerpiece) */
+.main-scrapbook-sheet {
+  background-color: var(--paper-white);
+  box-shadow: 0 20px 65px rgba(60, 42, 28, 0.16), 0 4px 14px rgba(60, 42, 28, 0.08);
+  border-radius: 4px;
+  position: relative;
+  padding: 60px 48px 80px 48px;
+  border: 1px solid rgba(210, 195, 175, 0.4);
+}
+
+/* Spiral Notebook Torn Ring Perforations at Top */
+.spiral-binder-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 24px;
+  pointer-events: none;
+  border-bottom: 2px dashed rgba(190, 175, 155, 0.45);
+}
+
+.spiral-hole {
+  width: 14px;
+  height: 20px;
+  background: var(--bg-desk);
+  border-radius: 3px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Vintage Yellow Pencil on the Left Edge */
+.real-pencil {
+  position: absolute;
+  left: -28px;
+  top: 140px;
+  width: 18px;
+  height: 520px;
+  background: linear-gradient(90deg, #E69A28 0%, #F5B041 50%, #C87E12 100%);
+  border-radius: 9px 9px 0 0;
+  box-shadow: -4px 6px 14px rgba(50, 35, 24, 0.25);
+  pointer-events: none;
+  z-index: 20;
+  transform: rotate(-1.5deg);
+}
+
+.pencil-eraser {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background: #E88888;
+  border-radius: 9px 9px 0 0;
+  border-bottom: 3px solid #BBB;
+}
+
+.pencil-ferrule {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background: repeating-linear-gradient(90deg, #B5B5B5, #D8D8D8 4px, #A0A0A0 8px);
+}
+
+.pencil-tip {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 28px solid #E4C196;
+}
+
+.pencil-lead {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #2B2B2B;
+}
+
+/* --------------------------------------------------------------------------
+   Scrapbook Navbar (Minimalist Stamp Style)
+   -------------------------------------------------------------------------- */
+.scrapbook-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px dashed rgba(160, 140, 120, 0.4);
+  margin-bottom: 40px;
+}
+
+.scrapbook-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink-primary);
+}
+
+.brand-main {
+  font-family: var(--font-handwriting);
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink-primary);
+}
+
+.brand-vol {
+  font-family: var(--font-typewriter);
+  font-size: 13px;
+  color: var(--ink-muted);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.nav-links-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link-item {
+  font-family: var(--font-typewriter);
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link-item:hover {
+  color: var(--ink-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bday-stamp-badge {
+  background: #FFE2E2;
+  border: 1.5px dashed #D65A5A;
+  color: #9C2727;
+  font-family: var(--font-handwriting);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 3px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 6px;
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(214, 90, 90, 0.2);
+}
+
+.bday-stamp-badge:hover {
+  transform: rotate(1deg) scale(1.05);
+  box-shadow: 0 4px 12px rgba(214, 90, 90, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Washi & Masking Tape (Authentic Translucent)
+   -------------------------------------------------------------------------- */
+.washi-tape {
+  height: 28px;
+  background-color: var(--tape-bg, var(--tape-blue));
+  clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+  box-shadow: var(--shadow-tape);
+  opacity: 0.9;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+}
+
+.washi-tape.washi-blue {
+  --tape-bg: var(--tape-blue);
+  width: 90px;
+}
+
+.washi-tape.washi-caramel {
+  --tape-bg: var(--tape-caramel);
+  width: 96px;
+}
+
+.washi-tape.washi-masking {
+  --tape-bg: var(--tape-masking);
+  width: 104px;
+}
+
+/* Placement Helpers */
+.tape-top-left {
+  top: -12px;
+  left: -20px;
+  transform: rotate(var(--rot, -32deg));
+}
+
+.tape-top-right {
+  top: -12px;
+  right: -20px;
+  transform: rotate(var(--rot, 32deg));
+}
+
+.tape-top-center {
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(var(--rot, 2deg));
+}
+
+/* --------------------------------------------------------------------------
+   Paper Clips & Pushpins
+   -------------------------------------------------------------------------- */
+.paperclip-metal {
+  width: 16px;
+  height: 48px;
+  border: 2.5px solid #8E7F73;
+  border-radius: 8px;
+  position: absolute;
+  top: -16px;
+  right: 24px;
+  z-index: 18;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+
+.paperclip-metal::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  width: 7px;
+  height: 26px;
+  border: 2px solid #8E7F73;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.wooden-pushpin {
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 35% 35%, #D49D6A 0%, #9E6432 70%, #5E3411 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Polaroid Component (Crisp White with Slight Tilt)
+   -------------------------------------------------------------------------- */
+.polaroid-card {
+  background: var(--paper-polaroid);
+  padding: 12px 12px 24px 12px;
+  box-shadow: var(--shadow-polaroid);
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center center;
+  position: relative;
+  display: block;
+  margin: 0;
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.1, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.03) translateY(-4px);
+  box-shadow: 0 20px 45px rgba(50, 35, 24, 0.25);
+  z-index: 25 !important;
+}
+
+.polaroid-image-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #EAE3D6;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.polaroid-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.02) saturate(0.98);
+}
+
+.polaroid-hand-caption {
+  font-family: var(--font-handwriting);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink-primary);
+  margin-top: 12px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.polaroid-subtag {
+  font-family: var(--font-typewriter);
+  font-size: 11px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   HERO / SPREAD 1: "The Desk & The 17th Birthday"
+   -------------------------------------------------------------------------- */
+.hero-collage {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+/* Torn Kraft Paper "Collect moments, not just divs" */
+.kraft-scrap-banner {
+  background-color: var(--paper-kraft);
+  padding: 32px 28px;
+  box-shadow: 0 8px 24px rgba(60, 42, 28, 0.14);
+  transform: rotate(var(--rot, -1.8deg));
+  position: relative;
+  clip-path: polygon(
+    0% 2%, 3% 0%, 97% 1%, 100% 3%, 
+    99% 97%, 96% 100%, 2% 98%, 0% 96%
+  );
+  margin-bottom: 28px;
+}
+
+.kraft-headline {
+  font-family: var(--font-handwriting);
+  font-weight: 700;
+  font-size: clamp(34px, 4.5vw, 54px);
+  color: #2D2017;
+  line-height: 1.05;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.01em;
+}
+
+.kraft-body {
+  font-family: var(--font-typewriter);
+  font-size: 13.5px;
+  color: #3E2F25;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Pink Smiley Stamp */
+.smiley-sticker {
+  width: 48px;
+  height: 48px;
+  background: #FFAAA6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  position: absolute;
+  top: -18px;
+  right: 18px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  transform: rotate(8deg);
+  user-select: none;
+}
+
+/* School Ruled Lined Notepad Checklist */
+.ruled-notepad {
+  background-color: var(--paper-lined);
+  border: 1px solid rgba(200, 185, 165, 0.5);
+  box-shadow: 0 8px 22px rgba(60, 42, 28, 0.1);
+  padding: 24px 22px;
+  transform: rotate(var(--rot, 2deg));
+  position: relative;
+  clip-path: polygon(
+    1% 1%, 99% 0%, 100% 98%, 98% 100%, 
+    3% 99%, 0% 97%
+  );
+}
+
+.ruled-notepad-header {
+  font-family: var(--font-typewriter);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--ink-primary);
+  border-bottom: 2px solid rgba(180, 160, 135, 0.4);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checklist-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist-item {
+  font-family: var(--font-handwriting);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink-body);
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(180, 205, 225, 0.45); /* notebook blue ruling */
+  padding: 4px 0;
+}
+
+.check-box-checked {
+  color: var(--ink-blue-pen);
+  font-size: 20px;
+}
+
+/* Pressed Autumn Leaf Graphic (SVG/CSS) */
+.pressed-leaf {
+  position: absolute;
+  top: -24px;
+  left: 20px;
+  font-size: 42px;
+  transform: rotate(-25deg);
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+  pointer-events: none;
+}
+
+.doodle-butterfly {
+  position: absolute;
+  right: -20px;
+  bottom: 40px;
+  font-size: 32px;
+  transform: rotate(18deg);
+  opacity: 0.8;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   SPREAD 2: "The Blueprints & Trophies" (AEROSS, CyberX, RWDC, NSS)
+   -------------------------------------------------------------------------- */
+.spread-section {
+  margin-top: 70px;
+  position: relative;
+}
+
+.section-hand-header {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.section-tag-stamp {
+  font-family: var(--font-typewriter);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2b1c12;
+  background-color: var(--color-heading-bg); /* #d9bc97 */
+  border: 1.5px dashed #876241;
+  padding: 4px 12px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(60, 42, 28, 0.12);
+  transform: rotate(-0.5deg);
+}
+
+.section-hand-title {
+  font-family: var(--font-handwriting);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 52px);
+  color: var(--color-heading);
+  margin: 0;
+  line-height: 1.1;
+  display: inline-block;
+  background: linear-gradient(120deg, transparent 0%, rgba(217, 188, 151, 0.35) 20%, rgba(181, 148, 110, 0.25) 80%, transparent 100%);
+  padding: 0 6px;
+  border-radius: 2px;
+}
+
+/* Organic Asymmetrical Collage Layout */
+.trophies-collage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Accolade Paper Scrap */
+.scrap-trophy-card {
+  background: var(--paper-cream);
+  padding: 24px 22px;
+  box-shadow: var(--shadow-paper);
+  border-radius: 2px;
+  position: relative;
+  transform: rotate(var(--rot, 0deg));
+  border: 1px solid rgba(210, 195, 175, 0.4);
+  transition: transform 0.25s ease;
+}
+
+.scrap-trophy-card:hover {
+  transform: rotate(0deg) scale(1.02) translateY(-3px);
+  z-index: 10;
+}
+
+.trophy-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.trophy-seal {
+  font-size: 28px;
+}
+
+.trophy-org-tag {
+  font-family: var(--font-typewriter);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-muted);
+}
+
+.trophy-card-title {
+  font-family: var(--font-handwriting);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin: 0 0 6px 0;
+  line-height: 1.15;
+}
+
+.trophy-card-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink-body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Blueprint Graph Paper Scrap for AEROSS */
+.blueprint-scrap {
+  background-color: #F0F4F8;
+  background-image: 
+    linear-gradient(rgba(180, 205, 225, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 205, 225, 0.4) 1px, transparent 1px);
+  background-size: 14px 14px;
+  border: 1px solid rgba(160, 190, 215, 0.6);
+}
+
+/* CyberX Glitch / Tech Scrap */
+.cyberx-scrap {
+  background-color: #F4F6F9;
+  border-left: 4px solid var(--accent-cyber);
+}
+
+/* --------------------------------------------------------------------------
+   SPREAD 3: "Craft & Code" (Web Dev & Graphic Design)
+   -------------------------------------------------------------------------- */
+.craft-collage-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: start;
+}
+
+/* Peach / Terracotta Paper Scrap */
+.terracotta-scrap {
+  background-color: var(--paper-peach);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-paper);
+  transform: rotate(var(--rot, -1.2deg));
+  position: relative;
+  clip-path: polygon(1% 0%, 99% 1%, 100% 98%, 97% 100%, 2% 99%, 0% 97%);
+}
+
+.terracotta-title {
+  font-family: var(--font-handwriting);
+  font-size: 34px;
+  font-weight: 700;
+  color: #4A2318;
+  margin: 0 0 10px 0;
+}
+
+.terracotta-body {
+  font-family: var(--font-typewriter);
+  font-size: 13px;
+  color: #4A2318;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.tag-cloud-scrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.craft-tag-pill {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(74, 35, 24, 0.2);
+  color: #4A2318;
+  font-family: var(--font-typewriter);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* Sage Green Botanical Scrap */
+.sage-scrap {
+  background-color: var(--paper-sage);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-paper);
+  transform: rotate(var(--rot, 1.5deg));
+  position: relative;
+  clip-path: polygon(0% 1%, 98% 0%, 100% 97%, 97% 99%, 1% 100%, 0% 98%);
+}
+
+.sage-title {
+  font-family: var(--font-handwriting);
+  font-size: 34px;
+  font-weight: 700;
+  color: #273822;
+  margin: 0 0 10px 0;
+}
+
+.palette-swatches-strip {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.swatch-box {
+  flex: 1;
+  height: 34px;
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: flex-end;
+  padding: 2px 4px;
+  font-family: var(--font-typewriter);
+  font-size: 8.5px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* --------------------------------------------------------------------------
+   SPREAD 4: "The 3 Snapshots" (Polaroid Memories)
+   -------------------------------------------------------------------------- */
+.polaroids-trio-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   SPREAD 5: "Birthday Guestbook Wall" (Interactive Sticky Notes)
+   -------------------------------------------------------------------------- */
+.guestbook-cork-board {
+  background-color: var(--paper-cream);
+  border: 2px dashed rgba(180, 160, 135, 0.6);
+  border-radius: 4px;
+  padding: 36px 30px;
+  margin-top: 20px;
+  position: relative;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.guestbook-input-card {
+  background: var(--paper-white);
+  border: 1px solid rgba(200, 185, 165, 0.6);
+  box-shadow: 0 6px 20px rgba(60, 42, 28, 0.08);
+  padding: 24px;
+  max-width: 600px;
+  margin: 0 auto 36px auto;
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+.guestbook-input-title {
+  font-family: var(--font-handwriting);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin: 0 0 14px 0;
+  text-align: center;
+}
+
+.guestbook-text-input {
+  width: 100%;
+  background: #FAF7F2;
+  border: 1px solid rgba(180, 165, 145, 0.5);
+  font-family: var(--font-typewriter);
+  font-size: 13.5px;
+  padding: 10px 14px;
+  color: var(--ink-primary);
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.guestbook-text-input:focus {
+  outline: none;
+  border-color: #8E7055;
+  background: #FFF;
+}
+
+.color-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.color-circle-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.color-circle-btn.active {
+  border-color: var(--ink-primary);
+  transform: scale(1.2);
+}
+
+.btn-pin-stickynote {
+  background: #3B2E24;
+  color: #FFF;
+  font-family: var(--font-typewriter);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-pin-stickynote:hover {
+  background: #1F1712;
+  transform: translateY(-2px);
+}
+
+/* Pinned Sticky Notes Grid */
+.sticky-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+.pinned-note {
+  padding: 20px 18px;
+  box-shadow: 0 6px 18px rgba(60, 42, 28, 0.12), 0 1px 3px rgba(60, 42, 28, 0.08);
+  position: relative;
+  transform: rotate(var(--rot, 0deg));
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+.pinned-note:hover {
+  transform: rotate(0deg) scale(1.03) translateY(-3px);
+  z-index: 10;
+}
+
+.pinned-note-author {
+  font-family: var(--font-handwriting);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+}
+
+.pinned-note-text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--ink-primary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pinned-note-date {
+  font-family: var(--font-typewriter);
+  font-size: 10.5px;
+  color: var(--ink-muted);
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   SPREAD 6: Colophon & Dispatch
+   -------------------------------------------------------------------------- */
+.dispatch-airmail-scrap {
+  background: #FCFAF6;
+  border: 2px solid rgba(190, 175, 155, 0.5);
+  box-shadow: var(--shadow-paper);
+  padding: 36px 30px;
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+  transform: rotate(-0.5deg);
+}
+
+.airmail-stripe-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: repeating-linear-gradient(
+    45deg,
+    #C85A5A,
+    #C85A5A 12px,
+    #FFF 12px,
+    #FFF 18px,
+    #4A78A6 18px,
+    #4A78A6 30px,
+    #FFF 30px,
+    #FFF 36px
+  );
+}
+
+.social-paper-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 22px 0 16px 0;
+}
+
+.social-stamp-pill {
+  background: var(--paper-cream);
+  border: 1px dashed rgba(160, 140, 120, 0.6);
+  color: var(--ink-primary);
+  font-family: var(--font-typewriter);
+  font-size: 13px;
+  padding: 8px 18px;
+  text-decoration: none;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.social-stamp-pill:hover {
+  background: #EFE4D6;
+  border-color: var(--ink-primary);
+  transform: translateY(-2px);
+}
+
+/* Footer Colophon */
+.scrapbook-footer-colophon {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(190, 175, 155, 0.5);
+  text-align: center;
+  font-family: var(--font-typewriter);
+  font-size: 11.5px;
+  color: var(--ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Confetti & Birthday Modal
+   -------------------------------------------------------------------------- */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+.bday-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(45, 34, 25, 0.45);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.bday-modal-backdrop.active {
+  display: flex;
+}
+
+.bday-toast-sheet {
+  background: var(--paper-white);
+  color: var(--ink-primary);
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 30px 28px 30px;
+  border-radius: 3px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+  border: 1px solid rgba(190, 175, 155, 0.6);
+}
+
+.bday-toast-title {
+  font-family: var(--font-handwriting);
+  font-size: 42px;
+  font-weight: 700;
+  color: #B54738;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+}
+
+.bday-toast-text {
+  font-family: var(--font-typewriter);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ink-body);
+  margin-bottom: 20px;
+}
+
+.btn-bday-close {
+  background: #3B2E24;
+  color: #FFF;
+  font-family: var(--font-typewriter);
+  font-size: 13px;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Layout (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .main-scrapbook-sheet {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .real-pencil {
+    display: none;
+  }
+
+  .hero-collage {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .trophies-collage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .craft-collage-row {
+    grid-template-columns: 1fr;
+  }
+
+  .polaroids-trio-row {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .nav-links-row {
+    display: none;
+  }
+}

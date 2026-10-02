@@ -1,0 +1,21 @@
+{
+  "name": "kiara-scrapbook-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scrapbook Portfolio for Kiara Kapoor • DPS RK Puram • Web Dev & Graphic Design",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [
+    "scrapbook",
+    "portfolio",
+    "kiara-kapoor",
+    "dps-rk-puram",
+    "aeross",
+    "cyberx",
+    "coffee-dark"
+  ],
+  "author": "Kiara Kapoor",
+  "license": "MIT"
+}
