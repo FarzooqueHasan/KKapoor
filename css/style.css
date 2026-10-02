@@ -9,44 +9,72 @@
    -------------------------------------------------------------------------- */
 :root {
   /* User-Specified Palette */
-  --color-primary: #b5946e;        /* Primary warm golden-tan craft tone */
-  --bg-desk: #d9bc97;              /* Background warm kraft desk tone */
+  --color-primary: #b5946e;
+  /* Primary warm golden-tan craft tone */
+  --bg-desk: #d9bc97;
+  /* Background warm kraft desk tone */
   --bg-desk-warm: #cfb18b;
-  --sticky-bg-default: #e2cfb3;    /* Sticky notes background */
-  --color-heading: #241711;        /* Heading deep fountain ink color */
-  --color-heading-bg: #d9bc97;     /* Heading stamp background (#d9bc97) */
+  --sticky-bg-default: #e2cfb3;
+  /* Sticky notes background */
+  --color-heading: #241711;
+  /* Heading deep fountain ink color */
+  --color-heading-bg: #d9bc97;
+  /* Heading stamp background (#d9bc97) */
 
   /* Paper Sheets & Surfaces */
-  --paper-white: #FCFAF6;          /* Crisp spiral notebook paper */
-  --paper-kraft: #b5946e;          /* Primary kraft paper scrap (#b5946e) */
-  --paper-kraft-dark: #9c7c58;     /* Deep craft cardboard */
-  --paper-cream: #e2cfb3;          /* Warm vintage parchment / sticky bg (#e2cfb3) */
-  --paper-lined: #FDFCF7;          /* School ruled lined paper */
-  --paper-peach: #E8B4A2;          /* Soft terracotta/peach scrap */
-  --paper-sage: #C5CEBC;           /* Pressed botanical matcha sage scrap */
-  --paper-yellow: #e2cfb3;         /* User default sticky notes bg (#e2cfb3) */
-  --paper-pink: #E8BCBA;           /* Dusty rose birthday note */
-  --paper-polaroid: #FFFFFF;       /* Crisp Polaroid frame */
+  --paper-white: #efe3d3;
+  /* Crisp spiral notebook paper */
+  --paper-kraft: #cca27a;
+  /* Primary kraft paper scrap (#b5946e) */
+  --paper-kraft-dark: #9c7c58;
+  /* Deep craft cardboard */
+  --paper-cream: #e2cfb3;
+  /* Warm vintage parchment / sticky bg (#e2cfb3) */
+  --paper-lined: #FDFCF7;
+  /* School ruled lined paper */
+  --paper-peach: #E8B4A2;
+  /* Soft terracotta/peach scrap */
+  --paper-sage: #C5CEBC;
+  /* Pressed botanical matcha sage scrap */
+  --paper-yellow: #e2cfb3;
+  /* User default sticky notes bg (#e2cfb3) */
+  --paper-pink: #E8BCBA;
+  /* Dusty rose birthday note */
+  --paper-polaroid: #FFFFFF;
+  /* Crisp Polaroid frame */
 
   /* Inks (Dark espresso fountain ink for crisp readable headings) */
-  --ink-primary: #241711;          /* Dark espresso ink for headings */
-  --ink-body: #362820;             /* Soft charcoal/brown typewriter body */
-  --ink-muted: #6B5546;            /* Soft pencil graphite note */
-  --ink-faint: #967C6A;            /* Faint margin date stamps */
-  --ink-blue-pen: #2A4870;         /* Blue ballpoint pen doodle */
-  --ink-red-pen: #A83628;          /* Red marking pen */
+  --ink-primary: #241711;
+  /* Dark espresso ink for headings */
+  --ink-body: #362820;
+  /* Soft charcoal/brown typewriter body */
+  --ink-muted: #6B5546;
+  /* Soft pencil graphite note */
+  --ink-faint: #967C6A;
+  /* Faint margin date stamps */
+  --ink-blue-pen: #2A4870;
+  /* Blue ballpoint pen doodle */
+  --ink-red-pen: #A83628;
+  /* Red marking pen */
 
   /* Authentic Washi & Masking Tapes */
-  --tape-blue: rgba(110, 147, 178, 0.85);    /* Vintage blue washi tape */
-  --tape-caramel: rgba(181, 148, 110, 0.92); /* Matches primary #b5946e */
-  --tape-masking: rgba(226, 207, 179, 0.90); /* Matches sticky bg #e2cfb3 */
+  --tape-blue: rgba(110, 147, 178, 0.85);
+  /* Vintage blue washi tape */
+  --tape-caramel: rgba(181, 148, 110, 0.92);
+  /* Matches primary #b5946e */
+  --tape-masking: rgba(226, 207, 179, 0.90);
+  /* Matches sticky bg #e2cfb3 */
   --tape-terracotta: rgba(200, 115, 90, 0.85);
 
   /* Accents */
-  --accent-gold: #D4A034;          /* RWDC National 1st Gold */
-  --accent-silver: #8A9BA8;        /* NSS International 2nd */
-  --accent-cyber: #3A72A4;         /* CyberX blue */
-  --accent-aeross: #C95A3B;        /* AEROSS red/orange */
+  --accent-gold: #D4A034;
+  /* RWDC National 1st Gold */
+  --accent-silver: #8A9BA8;
+  /* NSS International 2nd */
+  --accent-cyber: #3A72A4;
+  /* CyberX blue */
+  --accent-aeross: #C95A3B;
+  /* AEROSS red/orange */
 
   /* Shadows (Natural, soft, tactile lifts) */
   --shadow-paper: 0 16px 40px rgba(60, 42, 28, 0.14), 0 3px 8px rgba(60, 42, 28, 0.08);
@@ -64,7 +92,9 @@
 /* --------------------------------------------------------------------------
    Reset & Page Setup
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -77,7 +107,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-desk);
-  background-image: 
+  background-image:
     radial-gradient(circle at 10% 15%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
     radial-gradient(circle at 90% 70%, rgba(181, 148, 110, 0.3) 0%, transparent 45%),
     linear-gradient(180deg, #d9bc97 0%, #d2b38c 50%, #c9a980 100%);
@@ -180,7 +210,8 @@ body::before {
   position: absolute;
   top: 6px;
   left: 28px;
-  background: var(--sticky-bg-default); /* #e2cfb3 */
+  background: var(--sticky-bg-default);
+  /* #e2cfb3 */
   border: 1px dashed #8b6845;
   color: #2b1c12;
   font-family: var(--font-handwriting);
@@ -197,8 +228,15 @@ body::before {
 }
 
 @keyframes pencilTagFloat {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-5px) rotate(-0.5deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(-0.5deg);
+  }
 }
 
 /* Hexagonal Yellow Wood Pencil Shaft */
@@ -208,14 +246,12 @@ body::before {
   left: 0;
   width: 100%;
   height: calc(100% - 50px);
-  background: linear-gradient(
-    90deg, 
-    #C87E12 0%, 
-    #F3AD38 22%, 
-    #F7BF5A 50%, 
-    #F3AD38 78%, 
-    #C87E12 100%
-  );
+  background: linear-gradient(90deg,
+      #C87E12 0%,
+      #F3AD38 22%,
+      #F7BF5A 50%,
+      #F3AD38 78%,
+      #C87E12 100%);
   box-shadow: -4px 8px 16px rgba(50, 35, 24, 0.28);
   border-radius: 0;
   transition: box-shadow 0.25s ease;
@@ -246,7 +282,7 @@ body::before {
   height: 32px;
   background: #E88888;
   border-radius: 10px 10px 0 0;
-  box-shadow: inset 0 2px 4px rgba(255,255,255,0.45), inset 0 -2px 4px rgba(0,0,0,0.12);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.45), inset 0 -2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .pencil-ferrule {
@@ -258,7 +294,7 @@ body::before {
   background: repeating-linear-gradient(90deg, #A8A8A8, #D8D8D8 3px, #989898 6px);
   border-top: 1px solid #777;
   border-bottom: 1px solid #777;
-  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .pencil-tip {
@@ -269,8 +305,9 @@ body::before {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 28px solid #E5C399; /* exposed cedar grain */
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
+  border-top: 28px solid #E5C399;
+  /* exposed cedar grain */
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
 }
 
 .pencil-lead {
@@ -281,7 +318,8 @@ body::before {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #2B2B2B; /* 2B graphite point */
+  border-top: 10px solid #2B2B2B;
+  /* 2B graphite point */
 }
 
 /* Hover Physics: Realistic Wooden Lift */
@@ -307,7 +345,8 @@ body::before {
 }
 
 .real-pencil.is-drawing .pencil-callout-tag {
-  background: var(--color-primary); /* #b5946e */
+  background: var(--color-primary);
+  /* #b5946e */
   color: #FFF;
   border-color: #5c3b1e;
   animation: none;
@@ -411,7 +450,7 @@ body::before {
   z-index: 15;
   box-shadow: var(--shadow-tape);
   opacity: 0.9;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.12));
 }
 
 .washi-tape.washi-blue {
@@ -460,7 +499,7 @@ body::before {
   top: -16px;
   right: 24px;
   z-index: 18;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
   pointer-events: none;
 }
 
@@ -485,7 +524,7 @@ body::before {
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
   z-index: 20;
   pointer-events: none;
 }
@@ -566,10 +605,8 @@ body::before {
   box-shadow: 0 8px 24px rgba(60, 42, 28, 0.14);
   transform: rotate(var(--rot, -1.8deg));
   position: relative;
-  clip-path: polygon(
-    0% 2%, 3% 0%, 97% 1%, 100% 3%, 
-    99% 97%, 96% 100%, 2% 98%, 0% 96%
-  );
+  clip-path: polygon(0% 2%, 3% 0%, 97% 1%, 100% 3%,
+      99% 97%, 96% 100%, 2% 98%, 0% 96%);
   margin-bottom: 28px;
 }
 
@@ -604,7 +641,7 @@ body::before {
   position: absolute;
   top: -18px;
   right: 18px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
   transform: rotate(8deg);
   user-select: none;
 }
@@ -617,10 +654,8 @@ body::before {
   padding: 24px 22px;
   transform: rotate(var(--rot, 2deg));
   position: relative;
-  clip-path: polygon(
-    1% 1%, 99% 0%, 100% 98%, 98% 100%, 
-    3% 99%, 0% 97%
-  );
+  clip-path: polygon(1% 1%, 99% 0%, 100% 98%, 98% 100%,
+      3% 99%, 0% 97%);
 }
 
 .ruled-notepad-header {
@@ -651,7 +686,8 @@ body::before {
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid rgba(180, 205, 225, 0.45); /* notebook blue ruling */
+  border-bottom: 1px solid rgba(180, 205, 225, 0.45);
+  /* notebook blue ruling */
   padding: 4px 0;
 }
 
@@ -668,7 +704,7 @@ body::before {
   font-size: 42px;
   transform: rotate(-25deg);
   opacity: 0.85;
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
   pointer-events: none;
 }
 
@@ -679,7 +715,7 @@ body::before {
   font-size: 32px;
   transform: rotate(18deg);
   opacity: 0.8;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
   pointer-events: none;
 }
 
@@ -703,7 +739,8 @@ body::before {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #2b1c12;
-  background-color: var(--color-heading-bg); /* #d9bc97 */
+  background-color: var(--color-heading-bg);
+  /* #d9bc97 */
   border: 1.5px dashed #876241;
   padding: 4px 12px;
   border-radius: 2px;
@@ -790,7 +827,7 @@ body::before {
 /* Blueprint Graph Paper Scrap for AEROSS */
 .blueprint-scrap {
   background-color: #F0F4F8;
-  background-image: 
+  background-image:
     linear-gradient(rgba(180, 205, 225, 0.4) 1px, transparent 1px),
     linear-gradient(90deg, rgba(180, 205, 225, 0.4) 1px, transparent 1px);
   background-size: 14px 14px;
@@ -883,13 +920,13 @@ body::before {
   flex: 1;
   height: 34px;
   border-radius: 1px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: flex-end;
   padding: 2px 4px;
   font-family: var(--font-typewriter);
   font-size: 8.5px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* --------------------------------------------------------------------------
@@ -913,7 +950,7 @@ body::before {
   padding: 36px 30px;
   margin-top: 20px;
   position: relative;
-  box-shadow: inset 0 2px 10px rgba(0,0,0,0.04);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .guestbook-input-card {
@@ -968,7 +1005,7 @@ body::before {
   border: 2px solid transparent;
   cursor: pointer;
   transition: transform 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .color-circle-btn.active {
@@ -1060,17 +1097,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 6px;
-  background: repeating-linear-gradient(
-    45deg,
-    #C85A5A,
-    #C85A5A 12px,
-    #FFF 12px,
-    #FFF 18px,
-    #4A78A6 18px,
-    #4A78A6 30px,
-    #FFF 30px,
-    #FFF 36px
-  );
+  background: repeating-linear-gradient(45deg,
+      #C85A5A,
+      #C85A5A 12px,
+      #FFF 12px,
+      #FFF 18px,
+      #4A78A6 18px,
+      #4A78A6 30px,
+      #FFF 30px,
+      #FFF 36px);
 }
 
 .social-paper-links {
@@ -1152,7 +1187,7 @@ body::before {
   width: 100%;
   padding: 36px 30px 28px 30px;
   border-radius: 3px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   position: relative;
   text-align: center;
   border: 1px solid rgba(190, 175, 155, 0.6);
@@ -1212,7 +1247,8 @@ body::before {
   left: 50%;
   transform: translateX(-50%) translateY(120px);
   background: #FCFAF6;
-  border: 2px solid var(--color-primary); /* #b5946e */
+  border: 2px solid var(--color-primary);
+  /* #b5946e */
   box-shadow: 0 16px 40px rgba(50, 35, 24, 0.28), 0 2px 6px rgba(50, 35, 24, 0.12);
   border-radius: 30px;
   padding: 8px 18px;

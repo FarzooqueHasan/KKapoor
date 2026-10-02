@@ -158,29 +158,22 @@
   // ---------------------------------------------------------------------------
   var DEFAULT_NOTES = [
     {
-      author: 'Team Frigidus Ignis • AEROSS',
-      text: 'Happy 17th birthday Kia! From grinding RWDC airfoil CAD files to winning All-India 1st and qualifying for Washington D.C. — you are our design MVP! 🚀🏆',
-      color: '#e2cfb3',
+      author: 'anAnt',
+      text: 'YOU ARE A VERY SHORT BUT COOL PERSON SO YOUR COOLNESS DENSITY IS HIGH CAUSE YOU ARE SMALL',
+      color: '#efe3d3',
       date: 'Today',
-      rot: -2
+      rot: 2.5
     },
     {
-      author: 'CyberX CS Gang • DPS RKP',
-      text: 'Happy birthday kfckapoor!! 🍗 Stop centering divs with margin-left: 47% (jk cyberxctf is actually god-tier architecture). Best front-end dev in 11th grade!',
-      color: '#b5946e',
-      date: 'Today',
-      rot: 2.2
-    },
-    {
-      author: 'Exun Clan \'26 • Frontend Lab',
-      text: 'HBD Kia!! The Aether web platform and symposium mockups look insane. May all your flexboxes stay centered and your Vercel deploys stay green! ✨',
+      author: 'manya',
+      text: "HAPPPIESTTTTTT SWEET 16 KIARAAAAAAA !!! 🤩🤩this is one of the most accidental and unxpected friendships i have(creds to aeross and nss ka unfinished kaam), but you’ve turned into one of my closest friends and favourite people:))).Have an amaaazzzzzzinggg birthdayyyy and an even amazingerrr year(coz you deserve it) 💗💗💗",
       color: '#e2cfb3',
       date: 'Today',
       rot: -1.5
     },
     {
-      author: 'Class 11-J Desk Partner',
-      text: 'Happy sweet 17th Kia! Please don\'t drink 3 hazelnut lattes before physics class tomorrow 😂 Enjoy your day, you deserve all the celebration! ☕🎂',
+      author: 'TheBlessedOne',
+      text: 'Puppies are very adorable and cute, but they are nothing compared to the harmony of ur flute',
       color: '#C5CEBC',
       date: 'Today',
       rot: 2.5
@@ -332,7 +325,7 @@
       if (!canvas || !mainSheet) return;
       var rect = mainSheet.getBoundingClientRect();
       var dpr = window.devicePixelRatio || 1;
-      
+
       var tempCanvas = document.createElement('canvas');
       var hasContent = canvas.width > 0 && canvas.height > 0;
       if (hasContent) {
@@ -476,7 +469,7 @@
         ctx.clearRect(0, 0, rect.width, mainSheet.scrollHeight || rect.height);
         try {
           localStorage.removeItem('kiara_scrapbook_doodle_img');
-        } catch (err) {}
+        } catch (err) { }
         triggerScrapbookConfetti(15);
       });
     }
