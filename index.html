@@ -48,12 +48,23 @@
         <div class="spiral-hole"></div>
       </div>
 
-      <!-- Real Vintage Pencil on Left Margin -->
-      <div class="real-pencil" aria-hidden="true">
-        <div class="pencil-eraser"></div>
-        <div class="pencil-ferrule"></div>
-        <div class="pencil-tip"></div>
-        <div class="pencil-lead"></div>
+      <!-- Interactive Scrapbook Doodle Layer (Draw on paper with the pencil) -->
+      <canvas id="doodle-canvas" aria-label="Interactive Scrapbook Doodle Layer"></canvas>
+
+      <!-- Real Vintage Pencil on Left Margin (Interactive Drawing Companion) -->
+      <div class="real-pencil-track" id="pencil-track">
+        <div class="real-pencil" id="scrapbook-pencil" role="button" tabindex="0" aria-label="Pick up vintage pencil to doodle on scrapbook" title="Click to pick up pencil and doodle!">
+          <div class="pencil-callout-tag" id="pencil-tag">
+            <span>✏️</span> doodle with me!
+          </div>
+          <div class="pencil-eraser"></div>
+          <div class="pencil-ferrule"></div>
+          <div class="pencil-shaft">
+            <span class="pencil-brand-stamp">FABER-CASTELL 2B • KIA '26</span>
+          </div>
+          <div class="pencil-tip"></div>
+          <div class="pencil-lead"></div>
+        </div>
       </div>
 
       <!-- Header & Navigation Bar -->
@@ -553,6 +564,39 @@
       </button>
     </div>
   </div>
+
+  <!-- Floating Scrapbook Pencil Case / Tool Palette (Appears in Doodle Mode) -->
+  <aside id="doodle-toolbar" class="doodle-toolbar" role="toolbar" aria-label="Scrapbook Doodle Tools">
+    <div class="doodle-toolbar-inner">
+      <div class="doodle-tool-label">
+        <span class="tool-icon">✏️</span>
+        <span class="tool-text">Doodle Mode</span>
+      </div>
+      
+      <div class="doodle-tools-group">
+        <button type="button" class="doodle-color-btn active" data-color="#2D2824" data-size="2.5" title="Graphite Pencil (2B)" aria-label="2B Graphite Pencil" style="--dot-color: #2D2824;"></button>
+        <button type="button" class="doodle-color-btn" data-color="#2A4870" data-size="2.5" title="Blue Ballpoint Pen" aria-label="Blue Ballpoint Pen" style="--dot-color: #2A4870;"></button>
+        <button type="button" class="doodle-color-btn" data-color="#A83628" data-size="2.5" title="Red Marker Pen" aria-label="Red Marker Pen" style="--dot-color: #A83628;"></button>
+        <button type="button" class="doodle-color-btn" data-color="#D4A034" data-size="5" title="Gold Highlighter" aria-label="Gold Highlighter" style="--dot-color: #D4A034;"></button>
+        
+        <button type="button" class="doodle-action-btn" id="doodle-eraser-btn" title="Toggle Rubber Eraser">
+          <span>🧽</span> Eraser
+        </button>
+        <button type="button" class="doodle-action-btn" id="doodle-clear-btn" title="Clear all doodles">
+          <span>🗑️</span> Clear
+        </button>
+      </div>
+
+      <button type="button" class="doodle-done-btn" id="doodle-done-btn" title="Put pencil down and exit doodle mode">
+        ✓ Put Down Pencil
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile Quick Doodle Button (Fixed Bottom Left for mobile/tablet) -->
+  <button type="button" id="mobile-doodle-fab" class="mobile-doodle-fab" aria-label="Pick up pencil to doodle">
+    <span>✏️</span> Doodle on Book
+  </button>
 
   <script src="js/scrapbook.js"></script>
 </body>

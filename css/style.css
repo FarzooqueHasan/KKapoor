@@ -149,19 +149,93 @@ body::before {
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.8);
 }
 
-/* Vintage Yellow Pencil on the Left Edge */
-.real-pencil {
+/* --------------------------------------------------------------------------
+   Interactive Vintage Pencil Track & Companion (Left Margin)
+   -------------------------------------------------------------------------- */
+.real-pencil-track {
   position: absolute;
-  left: -28px;
-  top: 140px;
-  width: 18px;
-  height: 520px;
-  background: linear-gradient(90deg, #E69A28 0%, #F5B041 50%, #C87E12 100%);
-  border-radius: 9px 9px 0 0;
-  box-shadow: -4px 6px 14px rgba(50, 35, 24, 0.25);
+  left: -32px;
+  top: 90px;
+  bottom: 120px;
+  width: 24px;
   pointer-events: none;
-  z-index: 20;
+  z-index: 35;
+}
+
+.real-pencil {
+  position: sticky;
+  top: 90px;
+  width: 20px;
+  height: 460px;
+  pointer-events: auto;
+  cursor: pointer;
   transform: rotate(-1.5deg);
+  transform-origin: 50% 15%;
+  transition: transform 0.28s cubic-bezier(0.2, 0, 0.1, 1), filter 0.28s ease;
+  user-select: none;
+}
+
+/* Callout Tape Tag taped to the Pencil */
+.pencil-callout-tag {
+  position: absolute;
+  top: 6px;
+  left: 28px;
+  background: var(--sticky-bg-default); /* #e2cfb3 */
+  border: 1px dashed #8b6845;
+  color: #2b1c12;
+  font-family: var(--font-handwriting);
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 3px 10px;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(50, 35, 24, 0.16);
+  transform: rotate(-3deg);
+  animation: pencilTagFloat 3.2s ease-in-out infinite;
+  pointer-events: none;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+@keyframes pencilTagFloat {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(-0.5deg); }
+}
+
+/* Hexagonal Yellow Wood Pencil Shaft */
+.pencil-shaft {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 50px);
+  background: linear-gradient(
+    90deg, 
+    #C87E12 0%, 
+    #F3AD38 22%, 
+    #F7BF5A 50%, 
+    #F3AD38 78%, 
+    #C87E12 100%
+  );
+  box-shadow: -4px 8px 16px rgba(50, 35, 24, 0.28);
+  border-radius: 0;
+  transition: box-shadow 0.25s ease;
+}
+
+/* Vintage Gold Brand Stamping along Shaft */
+.pencil-brand-stamp {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  transform-origin: center center;
+  font-family: var(--font-typewriter);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(70, 35, 8, 0.65);
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .pencil-eraser {
@@ -171,8 +245,8 @@ body::before {
   width: 100%;
   height: 32px;
   background: #E88888;
-  border-radius: 9px 9px 0 0;
-  border-bottom: 3px solid #BBB;
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.45), inset 0 -2px 4px rgba(0,0,0,0.12);
 }
 
 .pencil-ferrule {
@@ -181,7 +255,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 18px;
-  background: repeating-linear-gradient(90deg, #B5B5B5, #D8D8D8 4px, #A0A0A0 8px);
+  background: repeating-linear-gradient(90deg, #A8A8A8, #D8D8D8 3px, #989898 6px);
+  border-top: 1px solid #777;
+  border-bottom: 1px solid #777;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6);
 }
 
 .pencil-tip {
@@ -190,9 +267,10 @@ body::before {
   left: 0;
   width: 0;
   height: 0;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 28px solid #E4C196;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 28px solid #E5C399; /* exposed cedar grain */
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.15));
 }
 
 .pencil-lead {
@@ -201,9 +279,39 @@ body::before {
   left: 0;
   width: 0;
   height: 0;
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 9px solid #2B2B2B;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2B2B2B; /* 2B graphite point */
+}
+
+/* Hover Physics: Realistic Wooden Lift */
+.real-pencil:hover {
+  transform: rotate(2deg) translateY(-8px) scale(1.03);
+}
+
+.real-pencil:hover .pencil-shaft {
+  box-shadow: -8px 18px 28px rgba(50, 35, 24, 0.38);
+}
+
+.real-pencil:hover .pencil-callout-tag {
+  background: #FFE2E2;
+  border-color: #D65A5A;
+  color: #9C2727;
+  transform: translateY(-2px) rotate(1deg) scale(1.06);
+}
+
+/* Active / Picked Up State for Drawing Mode */
+.real-pencil.is-drawing {
+  transform: rotate(-18deg) translateY(-14px) scale(1.06);
+  filter: drop-shadow(0 0 12px rgba(230, 154, 40, 0.45));
+}
+
+.real-pencil.is-drawing .pencil-callout-tag {
+  background: var(--color-primary); /* #b5946e */
+  color: #FFF;
+  border-color: #5c3b1e;
+  animation: none;
+  transform: rotate(0deg);
 }
 
 /* --------------------------------------------------------------------------
@@ -1079,6 +1187,171 @@ body::before {
 }
 
 /* --------------------------------------------------------------------------
+   Scrapbook Doodle Canvas & Floating Tool Palette
+   -------------------------------------------------------------------------- */
+#doodle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 45;
+  border-radius: 4px;
+}
+
+#doodle-canvas.is-active {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+/* Floating Scrapbook Pencil Case / Tool Palette */
+.doodle-toolbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: #FCFAF6;
+  border: 2px solid var(--color-primary); /* #b5946e */
+  box-shadow: 0 16px 40px rgba(50, 35, 24, 0.28), 0 2px 6px rgba(50, 35, 24, 0.12);
+  border-radius: 30px;
+  padding: 8px 18px;
+  z-index: 9999;
+  transition: transform 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28), opacity 0.25s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.doodle-toolbar.is-visible {
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.doodle-toolbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.doodle-tool-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-handwriting);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink-primary);
+  padding-right: 12px;
+  border-right: 1px dashed rgba(181, 148, 110, 0.5);
+  white-space: nowrap;
+}
+
+.doodle-tools-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doodle-color-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  background-color: var(--dot-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, outline 0.2s ease;
+  position: relative;
+}
+
+.doodle-color-btn:hover {
+  transform: scale(1.15);
+}
+
+.doodle-color-btn.active {
+  transform: scale(1.22);
+  outline: 2px solid var(--ink-primary);
+  outline-offset: 2px;
+}
+
+.doodle-action-btn {
+  background: #FAF7F2;
+  border: 1px solid rgba(181, 148, 110, 0.6);
+  font-family: var(--font-typewriter);
+  font-size: 11.5px;
+  color: var(--ink-primary);
+  padding: 5px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.doodle-action-btn:hover {
+  background: var(--color-primary);
+  color: #FFF;
+  transform: translateY(-1px);
+}
+
+.doodle-action-btn.active {
+  background: var(--ink-primary);
+  color: #FFF;
+  border-color: var(--ink-primary);
+}
+
+.doodle-done-btn {
+  background: var(--color-primary);
+  color: #FFF;
+  border: none;
+  font-family: var(--font-typewriter);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(181, 148, 110, 0.4);
+  white-space: nowrap;
+}
+
+.doodle-done-btn:hover {
+  background: #947450;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(181, 148, 110, 0.5);
+}
+
+/* Mobile Quick Doodle Button (Fixed Bottom Left) */
+.mobile-doodle-fab {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #F3AD38;
+  border: 2px solid #C87E12;
+  color: #241711;
+  font-family: var(--font-typewriter);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 9998;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease;
+}
+
+.mobile-doodle-fab:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
    Responsive Layout (Mobile & Tablet)
    -------------------------------------------------------------------------- */
 @media (max-width: 860px) {
@@ -1086,8 +1359,24 @@ body::before {
     padding: 40px 20px 60px 20px;
   }
 
-  .real-pencil {
+  .real-pencil-track {
     display: none;
+  }
+
+  .mobile-doodle-fab {
+    display: inline-flex;
+  }
+
+  .doodle-toolbar {
+    width: 95%;
+    max-width: 440px;
+    padding: 8px 12px;
+  }
+
+  .doodle-toolbar-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
 
   .hero-collage {
